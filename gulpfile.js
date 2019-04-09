@@ -11,8 +11,8 @@ var gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   browserSync = require('browser-sync');
 
-gulp.task('sass', function() { // Создаем таск "sass"
-  return gulp.src(['app/sass/**/*.sass', 'app/sass/**/*.scss']) // Берем источник
+gulp.task('sass', function() {
+  return gulp.src(['app/sass/**/*.sass', 'app/sass/**/*.scss'])
     .pipe(sass({
       outputStyle: 'extended'
     }).on('error', sass.logError))
@@ -29,7 +29,6 @@ gulp.task('scripts', function() {
   return gulp.src([
       'app/libs/jquery/dist/jquery.min.js',
       'app/libs/vue/vue.js',
-      'app/libs/air-datepicker/js/datepicker.js',
     ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
@@ -75,7 +74,7 @@ gulp.task('img', function() {
     .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('fonts', function() { // Создаем таск "sass"
+gulp.task('fonts', function() {
   return gulp.src(['app/fonts/**/*'])
     .pipe(gulp.dest('app/fonts'))
 });
